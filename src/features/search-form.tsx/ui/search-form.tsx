@@ -5,7 +5,7 @@ import { Button } from "@/shared/components/ui/button";
 import { Input } from "@/shared/components/ui/input";
 import { cn } from "@/shared/lib/utils";
 import { Search } from "lucide-react";
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, Suspense, useState } from "react";
 
 interface Props {
   className?: string;
@@ -53,9 +53,10 @@ export const SearchForm: React.FC<Props> = ({ className }) => {
           <Search className="shrink-0 size-6" />
           Scan
         </Button>
-
       </div>
+      <Suspense fallback={"loading...."}>
         {!!data && <AnalysisResultCard data={data} />}
+      </Suspense>
     </div>
   );
 };
