@@ -23,6 +23,8 @@ export interface ContentMetrics {
     social_media_matches: number;    // 2.3
     affiliation_mentions: number;    // 2.4
     negative_factchecks: number;     // 2.5
+    is_reputable_agency?: number;
+    is_generic_admin?: number;
   };
   verification: {
     independent_confirmations: number; // 3.1
@@ -66,7 +68,7 @@ export interface AnalysisContext {
   urlObj: URL;
   html?: string;     // Raw HTML
   text?: string;     // Clean Text
-  
-  domainData?: any;          
-  contentMetrics?: ContentMetrics | null; 
+
+  domainData?: any;
+  contentMetrics?: ContentMetrics | null;
 }

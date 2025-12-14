@@ -14,4 +14,10 @@ export abstract class BaseCriteria {
       metadata,
     };
   }
+
+
+  public setWeight(newWeight: number): this {
+    this.weight = newWeight;
+    return this; 
+  }
 }
